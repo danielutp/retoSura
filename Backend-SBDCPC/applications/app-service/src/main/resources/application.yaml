@@ -1,14 +1,12 @@
-##Spring Configuration
 server:
   port: 8080
 spring:
   application:
-    name: SBDCPC
+    name: "SBDCPC"
   devtools:
     add-properties: false
   profiles:
-    include:
+    include: null
   data:
     mongodb:
-      uri: "mongodb+srv://admin:admin@atlascluster.t1mywip.mongodb.net/?retryWrites=true&w=majority/database-sbdcpc"
-
+      uri: "mongodb://localhost:27017/test"
