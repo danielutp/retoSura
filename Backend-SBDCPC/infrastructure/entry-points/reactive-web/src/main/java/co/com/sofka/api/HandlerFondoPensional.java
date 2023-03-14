@@ -1,10 +1,10 @@
 package co.com.sofka.api;
 
 import co.com.sofka.model.fondopensional.FondoPensional;
-import co.com.sofka.usecase.actualizarfondopensional.ActualizarFondoPensionalUseCase;
-import co.com.sofka.usecase.buscarfondopensional.BuscarFondoPensionalUseCase;
-import co.com.sofka.usecase.crearfondopensional.UseCaseCrearFondoPensionalUseCase;
-import co.com.sofka.usecase.listafondopensional.UseCaseListaFondoPensionalUseCase;
+import co.com.sofka.usecase.fondoPensional.actualizarfondopensional.ActualizarFondoPensionalUseCase;
+import co.com.sofka.usecase.fondoPensional.buscarfondopensional.BuscarFondoPensionalUseCase;
+import co.com.sofka.usecase.fondoPensional.crearfondopensional.UseCaseCrearFondoPensionalUseCase;
+import co.com.sofka.usecase.fondoPensional.listafondopensional.UseCaseListaFondoPensionalUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

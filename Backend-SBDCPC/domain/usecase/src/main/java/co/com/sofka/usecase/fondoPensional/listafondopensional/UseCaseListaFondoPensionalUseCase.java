@@ -1,4 +1,4 @@
-package co.com.sofka.usecase.listafondopensional;
+package co.com.sofka.usecase.fondoPensional.listafondopensional;
 
 import co.com.sofka.model.fondopensional.FondoPensional;
 import co.com.sofka.model.fondopensional.gateways.FondoPensionalRepository;
