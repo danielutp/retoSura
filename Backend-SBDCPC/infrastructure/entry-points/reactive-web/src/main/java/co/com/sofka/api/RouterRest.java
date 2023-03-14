@@ -13,8 +13,10 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class RouterRest {
 @Bean
 public RouterFunction<ServerResponse> routerFunction(HandlerFondoPensional handlerFondoPensional) {
-    return route(POST("/api/crearfondopensiones"), handlerFondoPensional::crearFondoPensionalPOSTUseCase)
-            .andRoute(GET("/api/listaPensiones"), handlerFondoPensional::listaFondoPensionalGETUseCase);
+    return route(POST("/api/crearFondoPensional"), handlerFondoPensional::crearFondoPensionalPOSTUseCase).andRoute
+            (GET("/api/listaFondoPensiones"), handlerFondoPensional::listaFondoPensionalGETUseCase).andRoute
+            (GET("/api/fondoPensional/{id}"), handlerFondoPensional::buscarFondoPensionalGETUseCase).andRoute
+            (POST("/api/actualizarfondopensional"), handlerFondoPensional::crearFondoPensionalPOSTUseCase);
 
     }
 }

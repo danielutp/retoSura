@@ -10,6 +10,7 @@ import co.com.sofka.mongo.genero.document.GeneroDocument;
 import co.com.sofka.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Mono;
 
 @Repository
 public class MongoFondoPensionalRepositoryAdapter extends AdapterOperations<FondoPensional, FondoPensionalDocument, String, MongoDBFondoPensionalRepository>
@@ -22,5 +23,14 @@ public class MongoFondoPensionalRepositoryAdapter extends AdapterOperations<Fond
          *  Or using mapper.map with the class of the object model
          */
         super(repository, mapper, d -> mapper.map(d, FondoPensional.class));
+    }
+
+    @Override
+    public Mono<FondoPensional> update(FondoPensional fondoPensional) {
+        var id = fondoPensional.getId();
+        return repository.findById(id).flatMap(e -> repository.save(new FondoPensionalDocument(fondoPensional.getId(), fondoPensional.getNombreFondo()))
+                .flatMap(x -> Mono.just(fondoPensional))
+
+        );
     }
 }

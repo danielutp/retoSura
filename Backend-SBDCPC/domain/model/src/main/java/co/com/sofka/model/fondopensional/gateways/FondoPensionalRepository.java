@@ -10,8 +10,8 @@ public interface FondoPensionalRepository {
 
     Flux<FondoPensional> findAll();
 
-    Mono<Void> deleteById(String id);
-
     Mono<FondoPensional> findById(String id);
+
+    Mono<FondoPensional> update(FondoPensional fondoPensional);
 
 }
