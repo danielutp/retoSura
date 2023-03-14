@@ -5,11 +5,14 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface PensionadoRepository {
+
     Mono<Pensionado> save(Pensionado pensionado);
+
+    Mono<Pensionado> findAllByIdentificacion(Integer identificacion);
 
     Flux<Pensionado> findAll();
 
-    Mono<Void> deleteById(String id);
-
     Mono<Pensionado> findById(String id);
+
+
 }
