@@ -29,8 +29,6 @@ public class MongoFondoPensionalRepositoryAdapter extends AdapterOperations<Fond
     public Mono<FondoPensional> update(FondoPensional fondoPensional) {
         var id = fondoPensional.getId();
         return repository.findById(id).flatMap(e -> repository.save(new FondoPensionalDocument(fondoPensional.getId(), fondoPensional.getNombreFondo()))
-                .flatMap(x -> Mono.just(fondoPensional))
-
-        );
+                .flatMap(x -> Mono.just(fondoPensional)));
     }
 }

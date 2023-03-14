@@ -7,11 +7,7 @@ import reactor.core.publisher.Mono;
 public interface FondoPensionalRepository {
 
     Mono<FondoPensional> save(FondoPensional fondoPensional);
-
-    Flux<FondoPensional> findAll();
-
     Mono<FondoPensional> findById(String id);
-
     Mono<FondoPensional> update(FondoPensional fondoPensional);
 
 }

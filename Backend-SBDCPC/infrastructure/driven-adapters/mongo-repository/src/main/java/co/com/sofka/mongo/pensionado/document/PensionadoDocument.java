@@ -15,12 +15,12 @@ import java.util.Date;
 public class PensionadoDocument {
     @Id
     private String id;
-    private Integer numeroIdentificacion;
+    private Integer identificacion;
     private String tipoIdentificacion;
     private String nombres;
     private String apellidos;
     private Date fechaNacimiento;
-    private double salarioCausante;
+    private double salario;
     private Integer mesesCotizando;
     private String genero;
     private String fondoPensional;

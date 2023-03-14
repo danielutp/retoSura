@@ -7,4 +7,12 @@ import lombok.Data;
 public class TipoIdentificacion {
     private String id;
     private String identificacion;
+
+    public TipoIdentificacion(String id, String identificacion) {
+        this.id = id;
+        this.identificacion = identificacion;
+    }
+
+    public TipoIdentificacion() {
+    }
 }
