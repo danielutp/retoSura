@@ -18,7 +18,7 @@ public RouterFunction<ServerResponse> routerFunction(HandlerFondoPensional handl
             (POST("/api/crearTipoIdentificacion"), handlerTipoIdenficacion::crearTipoIdentificacionPOSTUseCase).andRoute
             (POST("/api/actualizarTipoIdentificacion"), handlerTipoIdenficacion::actualizarTipoIdentificacionPOSTUseCase).andRoute
             (POST("/api/crearPensionado"), handlerPensionado::crearPensionadoPOSTUseCase).andRoute
-            (POST("/api/actualizarPensionado/{id}"), handlerPensionado::actualizarPensionadoPOSTUseCase).andRoute
+            (PUT("/api/actualizarPensionado/{id}"), handlerPensionado::actualizarPensionadoPUTUseCase).andRoute
             (GET("/api/listaPensionado"), handlerPensionado::listaPensionadosGETUseCase).andRoute
             (GET("/api/buscarPensionado/{identificacion}"), handlerPensionado::buscarPensionadoGETUseCase);
     }

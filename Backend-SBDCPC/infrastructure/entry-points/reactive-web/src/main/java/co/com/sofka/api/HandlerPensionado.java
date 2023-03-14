@@ -1,9 +1,6 @@
 package co.com.sofka.api;
 
-import co.com.sofka.model.genero.Genero;
 import co.com.sofka.model.pensionado.Pensionado;
-import co.com.sofka.usecase.genero.actualizargenero.ActualizarGeneroUseCase;
-import co.com.sofka.usecase.genero.creargenero.CrearGeneroUseCase;
 import co.com.sofka.usecase.pensionado.actualizarpensionado.ActualizarPensionadoUseCase;
 import co.com.sofka.usecase.pensionado.buscarpensionado.BuscarPensionadoUseCase;
 import co.com.sofka.usecase.pensionado.crearpensionado.CrearPensionadoUseCase;
@@ -31,7 +28,7 @@ public class HandlerPensionado {
                         .body(crearPensionadoUseCase.crearPensionado(e), Pensionado.class));
     }
 
-    public Mono<ServerResponse> actualizarPensionadoPOSTUseCase(ServerRequest serverRequest) {
+    public Mono<ServerResponse> actualizarPensionadoPUTUseCase(ServerRequest serverRequest) {
         String id = serverRequest.pathVariable("id");
         System.out.println("Prueba");
         return serverRequest.bodyToMono(Pensionado.class)
