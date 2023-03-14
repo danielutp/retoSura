@@ -7,4 +7,12 @@ import lombok.Data;
 public class FondoPensional {
     private String id;
     private String nombreFondo;
+
+    public FondoPensional(String id, String nombreFondo) {
+        this.id = id;
+        this.nombreFondo = nombreFondo;
+    }
+
+    public FondoPensional() {
+    }
 }
