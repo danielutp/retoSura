@@ -7,7 +7,6 @@ import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
 public class CrearPensionadoUseCase {
-
     private final PensionadoRepository pensionadoRepository;
 
     public Mono<Pensionado> crearPensionado(Pensionado pensionado){

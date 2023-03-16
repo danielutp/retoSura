@@ -12,11 +12,11 @@ public class RouterRest {
 @Bean
 public RouterFunction<ServerResponse> routerFunction(HandlerFondoPensional handlerFondoPensional,HandlerGenero handlerGenero, HandlerTipoIdenficacion handlerTipoIdenficacion,HandlerPensionado handlerPensionado) {
     return route(POST("/api/crearFondoPensional"), handlerFondoPensional::crearFondoPensionalPOSTUseCase).andRoute
-            (POST("/api/actualizarFondoPensional"), handlerFondoPensional::actualizarFondoPensionalPOSTUseCase).andRoute
+            (PUT("/api/actualizarFondoPensional"), handlerFondoPensional::actualizarFondoPensionalPUTUseCase).andRoute
             (POST("/api/crearGenero"), handlerGenero::crearGeneroPOSTUseCase).andRoute
-            (POST("/api/actualizarGenero"), handlerGenero::actualizarGeneroPOSTUseCase).andRoute
+            (PUT("/api/actualizarGenero"), handlerGenero::actualizarGeneroPUTUseCase).andRoute
             (POST("/api/crearTipoIdentificacion"), handlerTipoIdenficacion::crearTipoIdentificacionPOSTUseCase).andRoute
-            (POST("/api/actualizarTipoIdentificacion"), handlerTipoIdenficacion::actualizarTipoIdentificacionPOSTUseCase).andRoute
+            (PUT("/api/actualizarTipoIdentificacion"), handlerTipoIdenficacion::actualizarTipoIdentificacionPUTUseCase).andRoute
             (POST("/api/crearPensionado"), handlerPensionado::crearPensionadoPOSTUseCase).andRoute
             (PUT("/api/actualizarPensionado/{id}"), handlerPensionado::actualizarPensionadoPUTUseCase).andRoute
             (GET("/api/listaPensionado"), handlerPensionado::listaPensionadosGETUseCase).andRoute

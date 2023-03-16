@@ -23,7 +23,7 @@ public class HandlerFondoPensional {
                         .body(crearFondoPensionalUseCase.crearFondoPensional(e), FondoPensional.class));
     }
 
-    public Mono<ServerResponse> actualizarFondoPensionalPOSTUseCase(ServerRequest serverRequest) {
+    public Mono<ServerResponse> actualizarFondoPensionalPUTUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(FondoPensional.class)
                 .flatMap(e-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

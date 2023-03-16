@@ -27,10 +27,8 @@ public class HandlerPensionado {
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(crearPensionadoUseCase.crearPensionado(e), Pensionado.class));
     }
-
     public Mono<ServerResponse> actualizarPensionadoPUTUseCase(ServerRequest serverRequest) {
         String id = serverRequest.pathVariable("id");
-        System.out.println("Prueba");
         return serverRequest.bodyToMono(Pensionado.class)
                 .flatMap(e-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

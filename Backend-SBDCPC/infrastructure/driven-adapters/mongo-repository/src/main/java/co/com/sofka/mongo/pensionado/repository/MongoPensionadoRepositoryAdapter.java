@@ -22,7 +22,7 @@ public class MongoPensionadoRepositoryAdapter extends AdapterOperations<Pensiona
     }
 
     @Override
-    public Mono<Pensionado> findAllByIdentificacion(Integer identificacion) {
+    public Mono<Pensionado> findByIdentificacion(Integer identificacion) {
         return repository.findAllByIdentificacion(identificacion);
     }
 }

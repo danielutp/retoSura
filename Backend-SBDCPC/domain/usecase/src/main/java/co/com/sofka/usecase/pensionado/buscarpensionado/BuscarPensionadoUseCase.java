@@ -10,6 +10,6 @@ public class BuscarPensionadoUseCase {
     private final PensionadoRepository pensionadoRepository;
 
     public Mono<Pensionado> buscarPensionado(Integer identificacion){
-        return pensionadoRepository.findAllByIdentificacion(identificacion);
+        return pensionadoRepository.findByIdentificacion(identificacion);
     }
 }

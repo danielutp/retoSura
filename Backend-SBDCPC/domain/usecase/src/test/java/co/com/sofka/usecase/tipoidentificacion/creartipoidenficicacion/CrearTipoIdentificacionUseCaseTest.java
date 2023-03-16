@@ -1,28 +1,26 @@
 package co.com.sofka.usecase.tipoidentificacion.creartipoidenficicacion;
 
-import co.com.sofka.model.genero.Genero;
-import co.com.sofka.model.genero.gateways.GeneroRepository;
 import co.com.sofka.model.tipoidentificacion.TipoIdentificacion;
 import co.com.sofka.model.tipoidentificacion.gateways.TipoIdentificacionRepository;
-import co.com.sofka.usecase.genero.creargenero.CrearGeneroUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
+import org.mockito.junit.jupiter.MockitoExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
+@ExtendWith(MockitoExtension.class)
 class CrearTipoIdentificacionUseCaseTest {
 
-    @MockBean
+    @Mock
     TipoIdentificacionRepository tipoIdentificacionRepository;
 
-    @SpyBean
+    @InjectMocks
     CrearTipoIdentificacionUseCase crearTipoIdentificacionUseCase;
 
     @BeforeEach

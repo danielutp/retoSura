@@ -8,7 +8,7 @@ public interface PensionadoRepository {
 
     Mono<Pensionado> save(Pensionado pensionado);
 
-    Mono<Pensionado> findAllByIdentificacion(Integer identificacion);
+    Mono<Pensionado> findByIdentificacion(Integer identificacion);
 
     Flux<Pensionado> findAll();
 

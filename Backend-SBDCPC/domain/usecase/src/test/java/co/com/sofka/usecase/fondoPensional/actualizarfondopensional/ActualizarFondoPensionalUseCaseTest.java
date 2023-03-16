@@ -5,23 +5,25 @@ import co.com.sofka.model.fondopensional.gateways.FondoPensionalRepository;
 import co.com.sofka.usecase.fondoPensional.crearfondopensional.CrearFondoPensionalUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
+import org.mockito.junit.jupiter.MockitoExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class ActualizarFondoPensionalUseCaseTest {
 
-    @MockBean
+    @Mock
     FondoPensionalRepository fondoPensionalRepository;
-
-    @SpyBean
+    @InjectMocks
     ActualizarFondoPensionalUseCase actualizarFondoPensionalUseCase;
+    @InjectMocks
+    CrearFondoPensionalUseCase crearFondoPensionalUseCase;
 
     @BeforeEach
     public void setUp(){
@@ -32,17 +34,13 @@ class ActualizarFondoPensionalUseCaseTest {
     @Test
     void actualizarFondoPensional() {
         FondoPensional fondoPensional = new FondoPensional("1","Porvenir");
-
         FondoPensional fondoPensionalActualizar = new FondoPensional("1","Estado");
 
-        Mono<FondoPensional> fondoPensionalMono = Mono.just(fondoPensional);
+        StepVerifier.create(crearFondoPensionalUseCase.crearFondoPensional(fondoPensional));
+        Mockito.when(fondoPensionalRepository.update(fondoPensional)).thenReturn(Mono.just(fondoPensionalActualizar));
 
-        when(fondoPensionalRepository.save(Mockito.any(FondoPensional.class))).thenReturn(fondoPensionalMono);
-
-        when(fondoPensionalRepository.update(Mockito.any(FondoPensional.class))).thenReturn(Mono.just(fondoPensionalActualizar));
-
-        StepVerifier.create(actualizarFondoPensionalUseCase.actualizarFondoPensional(fondoPensionalActualizar))
-                .expectNextMatches(idFondo -> idFondo.getNombreFondo().equals(fondoPensionalActualizar.getNombreFondo()))
+        StepVerifier.create(actualizarFondoPensionalUseCase.actualizarFondoPensional(fondoPensional))
+                .expectNextMatches(idFondo -> idFondo.getNombreFondo().equals("Estado"))
                 .verifyComplete();
     }
 }
