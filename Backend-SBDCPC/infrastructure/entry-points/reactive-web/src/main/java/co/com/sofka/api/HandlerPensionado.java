@@ -5,6 +5,7 @@ import co.com.sofka.usecase.pensionado.actualizarpensionado.ActualizarPensionado
 import co.com.sofka.usecase.pensionado.buscarpensionado.BuscarPensionadoUseCase;
 import co.com.sofka.usecase.pensionado.crearpensionado.CrearPensionadoUseCase;
 import co.com.sofka.usecase.pensionado.listapensionados.ListaPensionadosUseCase;
+import co.com.sofka.usecase.pensionado.verificarpensionado.VerificarPensionadoUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,7 @@ public class HandlerPensionado {
     private final ActualizarPensionadoUseCase actualizarPensionadoUseCase;
     private final ListaPensionadosUseCase listaPensionadosUseCase;
     private final BuscarPensionadoUseCase buscarPensionadoUseCase;
+    private final VerificarPensionadoUseCase verificarPensionadoUseCase;
 
     public Mono<ServerResponse> crearPensionadoPOSTUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(Pensionado.class)
@@ -46,6 +48,13 @@ public class HandlerPensionado {
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(buscarPensionadoUseCase.buscarPensionado(identificacion), Pensionado.class);
+    }
+
+    public Mono<ServerResponse> verificarPensionadoGETUseCase(ServerRequest serverRequest) {
+        Integer identificacion = Integer.valueOf(serverRequest.pathVariable("identificacion"));
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(verificarPensionadoUseCase.verificarPensionado(identificacion), Boolean.class);
     }
 
 

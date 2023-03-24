@@ -22,7 +22,4 @@ public class Pensionado {
     private String genero;
     private String fondoPensional;
 
-    public Object[] camposDelAfiliado(){
-        return new Object[]{identificacion,tipoIdentificacion,nombres,apellidos,fechaNacimiento,salario,mesesCotizando,genero,fondoPensional};
-    }
 }
