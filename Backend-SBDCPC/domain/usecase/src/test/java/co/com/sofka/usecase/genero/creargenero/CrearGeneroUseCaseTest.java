@@ -8,14 +8,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -42,7 +38,7 @@ class CrearGeneroUseCaseTest {
         when(generoRepository.save(Mockito.any(Genero.class))).thenReturn(generoMono);
 
         StepVerifier.create(crearGeneroUseCase.crearGenero(genero))
-                .expectNextMatches(generoR -> generoR.getGenero().equals("Masculino"))
+                .expectNextMatches(generoR -> generoR.getNombreGenero().equals("Masculino"))
                 .expectComplete()
                 .verify();
     }

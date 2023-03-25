@@ -12,7 +12,5 @@ public interface PensionadoRepository {
 
     Flux<Pensionado> findAll();
 
-    Mono<Pensionado> findById(String id);
-
 
 }

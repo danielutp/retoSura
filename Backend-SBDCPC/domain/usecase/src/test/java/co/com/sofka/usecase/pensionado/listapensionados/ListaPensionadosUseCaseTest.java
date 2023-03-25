@@ -32,7 +32,7 @@ class ListaPensionadosUseCaseTest {
     @Test
     void listarPensionados() {
         Date fecha = new Date(1995, 8,27);
-        Pensionado pensionado = new Pensionado("1",1088,"Cedula","daniel","gil",fecha,1953.4,4,"1","2");
+        Pensionado pensionado = new Pensionado("1",1088,"Cedula","daniel","gil",fecha,1953.4,4,"1",2);
         Mono<Pensionado> pensionadoMono = Mono.just(pensionado);
 
         when(pensionadoRepository.findAll()).thenReturn(Flux.just(pensionado));

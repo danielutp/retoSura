@@ -6,11 +6,11 @@ import lombok.Data;
 @Builder(toBuilder = true)
 public class Genero {
     private String id;
-    private String genero;
+    private String nombreGenero;
 
-    public Genero(String id, String genero) {
+    public Genero(String id, String nombreGenero) {
         this.id = id;
-        this.genero = genero;
+        this.nombreGenero = nombreGenero;
     }
 
     public Genero() {

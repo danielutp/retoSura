@@ -16,7 +16,7 @@ public class GlobalErrorAttributes extends DefaultErrorAttributes {
         Map<String, Object> errorMap = new HashMap<>();
         Throwable error = getError(request);
         errorMap.put("error", true);
-        errorMap.put("message", error.getMessage());
+        errorMap.put("messages", error.getMessage());
         errorMap.put("endpoint url ", request.path());
         return errorMap;
     }

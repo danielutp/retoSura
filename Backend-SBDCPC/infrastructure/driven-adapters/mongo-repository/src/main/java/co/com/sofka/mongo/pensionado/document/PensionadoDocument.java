@@ -20,8 +20,8 @@ public class PensionadoDocument {
     private String nombres;
     private String apellidos;
     private Date fechaNacimiento;
-    private double salario;
+    private Double salario;
     private Integer mesesCotizando;
     private String genero;
-    private String fondoPensional;
+    private Integer fondoPensional;
 }

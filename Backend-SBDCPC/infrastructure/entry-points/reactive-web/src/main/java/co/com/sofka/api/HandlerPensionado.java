@@ -30,11 +30,10 @@ public class HandlerPensionado {
                         .body(crearPensionadoUseCase.crearPensionado(e), Pensionado.class));
     }
     public Mono<ServerResponse> actualizarPensionadoPUTUseCase(ServerRequest serverRequest) {
-        String id = serverRequest.pathVariable("id");
         return serverRequest.bodyToMono(Pensionado.class)
                 .flatMap(e-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(actualizarPensionadoUseCase.actualizarPensionado(id,e), Pensionado.class));
+                        .body(actualizarPensionadoUseCase.actualizarPensionado(e), Pensionado.class));
     }
 
     public Mono<ServerResponse> listaPensionadosGETUseCase(ServerRequest serverRequest) {

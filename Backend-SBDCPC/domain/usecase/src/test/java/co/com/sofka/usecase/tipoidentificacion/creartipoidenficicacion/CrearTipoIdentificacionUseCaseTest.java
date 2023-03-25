@@ -31,10 +31,11 @@ class CrearTipoIdentificacionUseCaseTest {
 
     @Test
     void crearTipoIdentificacion() {
+
         TipoIdentificacion tipoIdentificacion = new TipoIdentificacion("1","Cedula");
         Mono<TipoIdentificacion> tipoIdentificacionMono = Mono.just(tipoIdentificacion);
 
-        when(tipoIdentificacionRepository.save(Mockito.any(TipoIdentificacion.class))).thenReturn(tipoIdentificacionMono);
+        when(tipoIdentificacionRepository.save(tipoIdentificacion)).thenReturn(tipoIdentificacionMono);
 
         StepVerifier.create(crearTipoIdentificacionUseCase.crearTipoIdentificacion(tipoIdentificacion))
                 .expectNextMatches(tipoIdentificacionP -> tipoIdentificacionP.getIdentificacion().equals("Cedula"))

@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class FondoPensionalDocument {
     @Id
     private String id;
+    private Integer idFondo;
     private String nombreFondo;
 
 }

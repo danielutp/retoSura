@@ -41,7 +41,7 @@ class ActualizarGeneroUseCaseTest {
         when(generoRepository.update(Mockito.any(Genero.class))).thenReturn(Mono.just(generoActualizar));
 
         StepVerifier.create(actualizarGeneroUseCase.actualizarGenero(generoActualizar))
-                .expectNextMatches(generoP -> generoP.getGenero().equals(generoActualizar.getGenero()))
+                .expectNextMatches(generoP -> generoP.getNombreGenero().equals(generoActualizar.getNombreGenero()))
                 .verifyComplete();
     }
 }

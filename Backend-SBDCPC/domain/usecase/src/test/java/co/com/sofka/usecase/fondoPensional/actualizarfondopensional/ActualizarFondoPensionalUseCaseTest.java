@@ -1,8 +1,8 @@
-package co.com.sofka.usecase.fondoPensional.actualizarfondopensional;
+package co.com.sofka.usecase.fondopensional.actualizarfondopensional;
 
 import co.com.sofka.model.fondopensional.FondoPensional;
 import co.com.sofka.model.fondopensional.gateways.FondoPensionalRepository;
-import co.com.sofka.usecase.fondoPensional.crearfondopensional.CrearFondoPensionalUseCase;
+import co.com.sofka.usecase.fondopensional.crearfondopensional.CrearFondoPensionalUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,8 +33,8 @@ class ActualizarFondoPensionalUseCaseTest {
 
     @Test
     void actualizarFondoPensional() {
-        FondoPensional fondoPensional = new FondoPensional("1","Porvenir");
-        FondoPensional fondoPensionalActualizar = new FondoPensional("1","Estado");
+        FondoPensional fondoPensional = new FondoPensional("1",1,"Porvenir");
+        FondoPensional fondoPensionalActualizar = new FondoPensional("1",1,"Estado");
 
         StepVerifier.create(crearFondoPensionalUseCase.crearFondoPensional(fondoPensional));
         Mockito.when(fondoPensionalRepository.update(fondoPensional)).thenReturn(Mono.just(fondoPensionalActualizar));

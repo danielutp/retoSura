@@ -20,6 +20,6 @@ public class Pensionado {
     private Double salario;
     private Integer mesesCotizando;
     private String genero;
-    private String fondoPensional;
+    private Integer fondoPensional;
 
 }

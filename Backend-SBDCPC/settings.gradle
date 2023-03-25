@@ -10,3 +10,7 @@ include ':mongo-repository'
 project(':mongo-repository').projectDir = file('./infrastructure/driven-adapters/mongo-repository')
 include ':reactive-web'
 project(':reactive-web').projectDir = file('./infrastructure/entry-points/reactive-web')
+include ':publishers'
+project(':publishers').projectDir = file('./infrastructure/driven-adapters/publishers')
+include ':suscriptor'
+project(':suscriptor').projectDir = file('./infrastructure/driven-adapters/suscriptor')
