@@ -24,7 +24,7 @@ public class Suscriptor {
         return HandlerRegistry.register().handleCommand(CAUSANTE_PENSIONADO,
         p->{
             AfiliadoFondo afiliadoFondo = p.getData();
-            actualizacionFondoPensionalUseCase.actualizacionFondoPensional(afiliadoFondo.getIdentificacion(),afiliadoFondo.getIdFondo());
+            actualizacionFondoPensionalUseCase.actualizacionFondoPensional(afiliadoFondo.getIdentificacion(),afiliadoFondo.getIdfondo()).subscribe();
         return Mono.empty();
 
         }

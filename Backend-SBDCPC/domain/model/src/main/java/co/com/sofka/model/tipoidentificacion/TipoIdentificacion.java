@@ -13,4 +13,6 @@ public class TipoIdentificacion {
         this.identificacion = identificacion;
     }
 
+    public TipoIdentificacion() {
+    }
 }

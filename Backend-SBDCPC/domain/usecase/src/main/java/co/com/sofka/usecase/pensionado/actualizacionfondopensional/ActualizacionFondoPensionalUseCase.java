@@ -1,6 +1,5 @@
 package co.com.sofka.usecase.pensionado.actualizacionfondopensional;
 
-import co.com.sofka.model.common.ex.BusinessException;
 import co.com.sofka.model.pensionado.Pensionado;
 import co.com.sofka.model.pensionado.gateways.PensionadoRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,11 +10,11 @@ public class ActualizacionFondoPensionalUseCase {
 
     private final PensionadoRepository pensionadoRepository;
     public Mono<Pensionado> actualizacionFondoPensional(Integer identificacion,Integer fondo){
+        var nuevoFondo =+ fondo;
         return pensionadoRepository.findByIdentificacion(identificacion)
-                .switchIfEmpty(Mono.error(new BusinessException(BusinessException.Type.USUARIO_NO_EXISTE)))
-                .flatMap(e-> {
-                    e.setFondoPensional(fondo);
-                    return pensionadoRepository.save(e);
+                .flatMap(pensionado-> {
+                    pensionado.setFondoPensional(nuevoFondo);
+                    return pensionadoRepository.save(pensionado);
                 });
     }
 }

@@ -9,5 +9,5 @@ import lombok.*;
 @Builder(toBuilder = true)
 public class AfiliadoFondo {
     private Integer identificacion;
-    private Integer idFondo;
+    private Integer idfondo;
 }

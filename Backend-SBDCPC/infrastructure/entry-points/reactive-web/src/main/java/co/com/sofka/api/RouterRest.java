@@ -3,11 +3,12 @@ package co.com.sofka.api;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @Configuration
 public class RouterRest {
     @Bean
@@ -26,6 +27,7 @@ public RouterFunction<ServerResponse> routerFunction(HandlerFondoPensional handl
             (PUT("/api/actualizarPensionado/{id}"), handlerPensionado::actualizarPensionadoPUTUseCase).andRoute
             (GET("/api/listaPensionado"), handlerPensionado::listaPensionadosGETUseCase).andRoute
             (GET("/api/buscarPensionado/{identificacion}"), handlerPensionado::buscarPensionadoGETUseCase).andRoute
-            (GET("/api/verificarPensionado/{identificacion}"), handlerPensionado::verificarPensionadoGETUseCase);
+            (GET("/api/verificarPensionado/{identificacion}"), handlerPensionado::verificarPensionadoGETUseCase).andRoute
+            (GET("/api/datosPensionado/{identificacion}"), handlerPensionado::datosRentaPensionadoGETUseCase);
     }
 }

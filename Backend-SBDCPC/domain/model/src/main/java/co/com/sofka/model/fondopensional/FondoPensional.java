@@ -15,7 +15,6 @@ public class FondoPensional {
         this.idFondo = idFondo;
     }
 
-
     public FondoPensional() {
     }
 }
