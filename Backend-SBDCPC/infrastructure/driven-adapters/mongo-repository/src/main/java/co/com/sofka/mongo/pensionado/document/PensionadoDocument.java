@@ -8,20 +8,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document
+@Document(value = "Pensionado")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PensionadoDocument {
     @Id
     private String id;
-    private Integer numeroIdentificacion;
+    private Integer identificacion;
     private String tipoIdentificacion;
     private String nombres;
     private String apellidos;
     private Date fechaNacimiento;
-    private double salarioCausante;
+    private Double salario;
     private Integer mesesCotizando;
     private String genero;
-    private String fondoPensional;
+    private Integer fondoPensional;
 }

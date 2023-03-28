@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(value = "Fondo Pensional")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FondoPensionalDocument {
     @Id
     private String id;
+    private Integer idFondo;
     private String nombreFondo;
 
 }

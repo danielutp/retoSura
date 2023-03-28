@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "cd1a4a23-2860-46bd-808f-7a0bd0aeda10",
+		"name": "Reto Sura SBDCPC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13649217"
+	},
+	"item": [
+		{
+			"name": "Fondo",
+			"item": [
+				{
+					"name": "Crear fondo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFondo\":1,\r\n    \"nombreFondo\": \"ARUS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/crearFondoPensional",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"crearFondoPensional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar fondo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6421eba7d53f8074ae7c75f4\",\r\n    \"idFondo\":1,\r\n    \"nombreFondo\": \"Arus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/actualizarFondoPensional",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actualizarFondoPensional"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genero",
+			"item": [
+				{
+					"name": "Crear genero",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreGenero\": \"Masculino\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/crearGenero",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"crearGenero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar genero",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6421ebf5d53f8074ae7c75f5\",\r\n    \"nombreGenero\": \"Masculino\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/actualizarGenero",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actualizarGenero"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo Identificacion",
+			"item": [
+				{
+					"name": "Crear tipo de identificacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificacion\": \"Cedula\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/crearTipoIdentificacion",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"crearTipoIdentificacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar tipo de identificacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6421f1016fa8645e360da47c\",\r\n    \"identificacion\": \"Pasaporte\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/actualizarTipoIdentificacion",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actualizarTipoIdentificacion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pensionado",
+			"item": [
+				{
+					"name": "Crear pensionado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificacion\": 1088329999,\r\n    \"tipoIdentificacion\": \"PRUEBA\",\r\n    \"nombres\": \"PRUEBA\",\r\n    \"apellidos\": \"PRUEBA\",\r\n    \"fechaNacimiento\": \"1995-08-27T00:00:00.000+00:00\",\r\n    \"salario\": 1420.2,\r\n    \"mesesCotizando\": 92,\r\n    \"genero\": \"64108b958ee663685d32deda\",\r\n    \"fondoPensional\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/crearPensionado",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"crearPensionado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de pensionados",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/listaPensionado",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"listaPensionado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar pensionado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/verificarPensionado/1088329117",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"verificarPensionado",
+								"1088329117"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pensionado por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/buscarPensionado/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buscarPensionado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar pensionado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"641caaf8a055a43f805b165d\",\r\n    \"identificacion\": 1058788348,\r\n    \"tipoIdentificacion\": \"64108d09cb2d4a0c0fa47aad\",\r\n    \"nombres\": \"GANE\",\r\n    \"apellidos\": \"Gil C\",\r\n    \"fechaNacimiento\": \"1995-08-27T00:00:00.000+00:00\",\r\n    \"salario\": 1420.2,\r\n    \"mesesCotizando\": 92,\r\n    \"genero\": \"64108b958ee663685d32deda\",\r\n    \"fondoPensional\": \"640fc9152ab60c3f9da09b70\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/actualizarPensionado/641caaf8a055a43f805b165d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actualizarPensionado",
+								"641caaf8a055a43f805b165d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
