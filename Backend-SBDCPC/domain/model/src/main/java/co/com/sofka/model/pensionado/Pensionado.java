@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder(toBuilder = true)
 public class Pensionado {
     private String id;
@@ -18,21 +20,6 @@ public class Pensionado {
     private Double salario;
     private Integer mesesCotizando;
     private String genero;
-    private String fondoPensional;
+    private Integer fondoPensional;
 
-    public Pensionado(String id, Integer identificacion, String tipoIdentificacion, String nombres, String apellidos, Date fechaNacimiento, Double salario, Integer mesesCotizando, String genero, String fondoPensional) {
-        this.id = id;
-        this.identificacion = identificacion;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
-        this.salario = salario;
-        this.mesesCotizando = mesesCotizando;
-        this.genero = genero;
-        this.fondoPensional = fondoPensional;
-    }
-
-    public Pensionado() {
-    }
 }

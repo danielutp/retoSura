@@ -13,6 +13,7 @@ plugins {
 	id 'org.springframework.boot' version "${springBootVersion}"
 	id 'org.sonarqube' version "${sonarVersion}"
 	id 'jacoco'
+
 }
 
 sonarqube {

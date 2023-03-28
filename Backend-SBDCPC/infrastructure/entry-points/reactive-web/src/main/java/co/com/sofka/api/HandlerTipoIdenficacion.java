@@ -1,6 +1,5 @@
 package co.com.sofka.api;
 
-import co.com.sofka.model.genero.Genero;
 import co.com.sofka.model.tipoidentificacion.TipoIdentificacion;
 import co.com.sofka.usecase.tipoidentificacion.actualizartipoidenficicacion.ActualizarTipoIdentificacionUseCase;
 import co.com.sofka.usecase.tipoidentificacion.creartipoidenficicacion.CrearTipoIdentificacionUseCase;
@@ -24,7 +23,7 @@ public class HandlerTipoIdenficacion {
                         .body(crearTipoIdentificacionUseCase.crearTipoIdentificacion(e), TipoIdentificacion.class));
     }
 
-    public Mono<ServerResponse> actualizarTipoIdentificacionPOSTUseCase(ServerRequest serverRequest) {
+    public Mono<ServerResponse> actualizarTipoIdentificacionPUTUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(TipoIdentificacion.class)
                 .flatMap(e-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

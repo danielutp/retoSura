@@ -24,7 +24,7 @@ public class HandlerGenero {
                         .body(crearGeneroUseCase.crearGenero(e), Genero.class));
     }
 
-    public Mono<ServerResponse> actualizarGeneroPOSTUseCase(ServerRequest serverRequest) {
+    public Mono<ServerResponse> actualizarGeneroPUTUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(Genero.class)
                 .flatMap(e-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
